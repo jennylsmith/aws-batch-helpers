@@ -15,7 +15,9 @@
 # It can also download a zip file from S3 and run a script from inside.
 # See below for usage instructions.
 
-PATH="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+#PATH variable is not allowing the script to work with Ananconda Installation of AWSCLI.
+#Need to append the PATH variable since it is declared in my docker image jennylsmith/isoseq3. 
+PATH="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 BASENAME="${0##*/}"
 
 usage () {
